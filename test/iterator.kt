@@ -1,8 +1,36 @@
 import flat_tree.*
-import ktape.*
+import tape.*
 
-val t = ktape
+const val TAP_VERSION = 13
+const val TAP_HEADER = "TAP version ${TAP_VERSION}"
 
-val iterator = Iterator(0, 0, 0)
+typealias OK = (ok: Boolean?, comment: String?) -> Unit?
 
-t.ok(iterator.index())
+fun main(args: Array<String>) {
+  println(TAP_HEADER)
+
+  val iterator = Iterator(0L)
+
+  println("_")
+  println(iterator.index)
+  println(iterator.offset)
+  println(iterator.factor)
+  iterator.seek(107L)
+
+  println("_")
+  println( truthy(true == iterator.isLeft()) )
+  println( truthy(false == iterator.isRight()) )
+  println(iterator.index)
+  println(iterator.offset)
+  println(iterator.factor)
+  iterator.seek(1L)
+
+  println("_")
+  println( truthy(true == iterator.isLeft()) )
+  println( truthy(false == iterator.isRight()) )
+  println(iterator.index)
+  println(iterator.offset)
+  println(iterator.factor)
+
+  println("hi")
+}
