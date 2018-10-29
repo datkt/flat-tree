@@ -1,6 +1,6 @@
 package flat_tree
 
-class tree {
+class Tree {
 
   fun fullRoots(index: Long, result: Array<Long>?):  Array<Long> {
     if (0L != index % 2L) {

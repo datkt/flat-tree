@@ -5,4 +5,6 @@ OS ?= $(shell uname)
 
 
 test: .
-	$(KOTLINC) . -l tape -o test -opt
+	$(KOTLINC) -r node_modules/@datkt -l tape/tape test/iterator.kt iterator.kt util.kt tree.kt -o test -opt
+
+
