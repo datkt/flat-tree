@@ -18,7 +18,7 @@ class Iterator {
 
   fun seek(index: Long) {
     this.index = index
-    if (0L == this.index % 2L) {
+    if (0L == this.index and 1L) {
       this.offset = index / 2L
       this.factor = 2L
     } else {
@@ -63,7 +63,7 @@ class Iterator {
   }
 
   fun parent(): Long {
-    if (0L == this.offset % 2L) {
+    if (0L == this.offset and 1L) {
       this.index += this.factor / 2L
       this.offset /= 2L
     } else {
@@ -102,8 +102,8 @@ class Iterator {
     if (2L == this.factor) {
       return this.index
     }
-    this.factor /= 2L
-    this.index -= this.factor / 2L
+    this.factor /= 2
+    this.index += this.factor / 2L
     this.offset = 2L * this.offset + 1L
     return this.index
   }
