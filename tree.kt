@@ -4,6 +4,7 @@ class Tree {
 
   fun fullRoots(index: Long, result: Array<Long>?):  Array<Long> {
     if (0L != index % 2L) {
+      println("error")
       // TODO: throw error
     }
     var local_result = arrayOf<Long>()
@@ -16,13 +17,14 @@ class Tree {
     var factor: Long = 1
 
     while (true) {
-      if (0L == index) {
+      if (0L == local_index) {
         return local_result
       }
-      while (factor * 2L <= factor - 1L) {
+      while (factor * 2L <= local_index) {
         factor *= 2
       }
-      local_result.plusElement(offset + factor - 1L)
+
+      local_result = local_result.plusElement(offset + factor - 1L)
       offset = offset + 2L * factor
       local_index -= factor
       factor = 1L
