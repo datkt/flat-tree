@@ -1,4 +1,4 @@
-import flat_tree.*
+import datkt.flat_tree.*
 import datkt.tape.*
 
 fun main(args: Array<String>) {

@@ -1,4 +1,4 @@
-package flat_tree
+package datkt.flat_tree
 
 fun ft_index(depth: Long, offset: Long): Long {
   return (1L + 2L * offset) * twoPow(depth) - 1L

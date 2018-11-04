@@ -1,4 +1,4 @@
-package flat_tree
+package datkt.flat_tree
 
 class Tree {
 
