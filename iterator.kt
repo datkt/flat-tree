@@ -1,4 +1,4 @@
-package datkt.flat_tree
+package datkt.flattree
 
 class Iterator {
   // data class Iterator(...) ?
@@ -22,8 +22,8 @@ class Iterator {
       this.offset = index / 2L
       this.factor = 2L
     } else {
-      this.offset = ft_offset(index, null)
-      this.factor = twoPow(ft_depth(index) + 1L)
+      this.offset = ftOffset(index, null)
+      this.factor = twoPow(ftDepth(index) + 1L)
     }
   }
 
