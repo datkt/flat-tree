@@ -1,9 +1,8 @@
 {
   "name": "flattree",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Kotlin port of @mafintosh's flat-tree functions to map a binary tree to a list.",
-  "directories": {
-  },
+  "directories": {},
   "scripts": {
     "test": "make test && ./test.kexe"
   },
