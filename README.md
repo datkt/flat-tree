@@ -11,7 +11,7 @@ Port of @mafintosh's flat-tree functions to map a binary tree to a list.
 
 ### Compile klib:
 ```sh
-$ make library
+$ make klib
 ```
 
 ### Run tests:
