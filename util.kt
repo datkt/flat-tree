@@ -1,31 +1,31 @@
-package datkt.flat_tree
+package datkt.flattree
 
-fun ft_index(depth: Long, offset: Long): Long {
+fun ftIndex(depth: Long, offset: Long): Long {
   return (1L + 2L * offset) * twoPow(depth) - 1L
 }
 
-fun ft_depth(index: Long): Long {
-  var local_index = index
+fun ftDepth(index: Long): Long {
+  var localIndex = index
   var depth: Long = 0
 
-  local_index += 1
-  while ( 0L == local_index % 2L ) {
+  localIndex += 1
+  while ( 0L == localIndex % 2L ) {
     depth++
-    local_index = rightShift(local_index)
+    localIndex = rightShift(localIndex)
   }
 
   return depth
 }
 
-fun ft_offset(index: Long, depth: Long?): Long {
+fun ftOffset(index: Long, depth: Long?): Long {
   var os: Long
-  var local_depth: Long
+  var localDepth: Long
   if ( null == depth ) {
-    local_depth = ft_depth(index)
+    localDepth = ftDepth(index)
   } else {
-    local_depth = depth
+    localDepth = depth
   }
-  os = ((index + 1L) / twoPow(local_depth) - 1L) / 2L
+  os = ((index + 1L) / twoPow(localDepth) - 1L) / 2L
   if (0L == index % 2L) {
     os = index / 2L
   }
@@ -33,13 +33,13 @@ fun ft_offset(index: Long, depth: Long?): Long {
 }
 
 fun twoPow(n: Long): Long {
-  var int_n: Int = n.toString().toInt()
+  var num1: Int = n.toString().toInt()
   if (n < 31L) {
-    val pow: Long = 1L shl int_n
+    val pow: Long = 1L shl num1
     return pow
   } else {
-    var int_b: Int = int_n - 30
-    val powwow: Long = ((1L shl 30) * (1L shl int_b))
+    var num2: Int = num1 - 30
+    val powwow: Long = ((1L shl 30) * (1L shl num2))
     return powwow
   }
 }

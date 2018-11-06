@@ -1,4 +1,4 @@
-import datkt.flat_tree.*
+import datkt.flattree.*
 import datkt.tape.*
 
 fun main(args: Array<String>) {
@@ -6,17 +6,17 @@ fun main(args: Array<String>) {
 
   test("base blocks", fun(t: Test) {
     println("init")
-    t.equal(0L, ft_index(0L, 0L), "0L, ft_index(0L, 0L)" )
-    t.equal(2L, ft_index(0L, 1L), "2L, ft_index(0L, 1L)" )
-    t.equal(4L, ft_index(0L, 2L), "4L, ft_index(0L, 2L)" )
+    t.equal(0L, ftIndex(0L, 0L), "0L, ftIndex(0L, 0L)" )
+    t.equal(2L, ftIndex(0L, 1L), "2L, ftIndex(0L, 1L)" )
+    t.equal(4L, ftIndex(0L, 2L), "4L, ftIndex(0L, 2L)" )
 
     t.end()
   })
 
   test("tree.parents", fun(t: Test) {
-    t.equal(1L, ft_index(1L, 0L), "1L, ft_index(1L, 0L)" )
-    t.equal(5L, ft_index(1L, 1L), "5L, ft_index(1L, 1L)" )
-    t.equal(3L, ft_index(2L, 0L), "3L, ft_index(2L, 0L)" )
+    t.equal(1L, ftIndex(1L, 0L), "1L, ftIndex(1L, 0L)" )
+    t.equal(5L, ftIndex(1L, 1L), "5L, ftIndex(1L, 1L)" )
+    t.equal(3L, ftIndex(2L, 0L), "3L, ftIndex(2L, 0L)" )
 
     t.equal(1L, tree.parent(0L, null), "1L, tree.parent(0L, null)" )
     t.equal(1L, tree.parent(2L, null), "1L, tree.parent(2L, null)" )
@@ -88,22 +88,22 @@ fun main(args: Array<String>) {
     t.end()
   })
 
-  test("ft_depth", fun(t: Test) {
-    t.equal(0L, ft_depth(0L), "0L, ft_depth(0L)" )
-    t.equal(1L, ft_depth(1L), "1L, ft_depth(1L)" )
-    t.equal(0L, ft_depth(2L), "0L, ft_depth(2L)" )
-    t.equal(2L, ft_depth(3L), "2L, ft_depth(3L)" )
-    t.equal(0L, ft_depth(4L), "0L, ft_depth(4L)" )
+  test("ftDepth", fun(t: Test) {
+    t.equal(0L, ftDepth(0L), "0L, ftDepth(0L)" )
+    t.equal(1L, ftDepth(1L), "1L, ftDepth(1L)" )
+    t.equal(0L, ftDepth(2L), "0L, ftDepth(2L)" )
+    t.equal(2L, ftDepth(3L), "2L, ftDepth(3L)" )
+    t.equal(0L, ftDepth(4L), "0L, ftDepth(4L)" )
 
     t.end()
   })
 
-  test("ft_offset", fun(t: Test) {
-    t.equal(0L, ft_offset(0L, null), "0L, ft_offset(0L, null)" )
-    t.equal(0L, ft_offset(1L, null), "0L, ft_offset(1L, null)" )
-    t.equal(1L, ft_offset(2L, null), "1L, ft_offset(2L, null)" )
-    t.equal(0L, ft_offset(3L, null), "0L, ft_offset(3L, null)" )
-    t.equal(2L, ft_offset(4L, null), "2L, ft_offset(4L, null)" )
+  test("ftOffset", fun(t: Test) {
+    t.equal(0L, ftOffset(0L, null), "0L, ftOffset(0L, null)" )
+    t.equal(0L, ftOffset(1L, null), "0L, ftOffset(1L, null)" )
+    t.equal(1L, ftOffset(2L, null), "1L, ftOffset(2L, null)" )
+    t.equal(0L, ftOffset(3L, null), "0L, ftOffset(3L, null)" )
+    t.equal(2L, ftOffset(4L, null), "2L, ftOffset(4L, null)" )
 
     t.end()
   })
