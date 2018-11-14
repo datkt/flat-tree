@@ -1,10 +1,10 @@
 package datkt.flattree
 
-fun ftIndex(depth: Long, offset: Long): Long {
+fun computeIndex(depth: Long, offset: Long): Long {
   return (1L + 2L * offset) * twoPow(depth) - 1L
 }
 
-fun ftDepth(index: Long): Long {
+fun computeDepth(index: Long): Long {
   var localIndex = index
   var depth: Long = 0
 
@@ -17,11 +17,11 @@ fun ftDepth(index: Long): Long {
   return depth
 }
 
-fun ftOffset(index: Long, depth: Long?): Long {
+fun computeOffset(index: Long, depth: Long?): Long {
   var os: Long
   var localDepth: Long
   if ( null == depth ) {
-    localDepth = ftDepth(index)
+    localDepth = computeDepth(index)
   } else {
     localDepth = depth
   }
