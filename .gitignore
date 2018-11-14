@@ -30,3 +30,4 @@ test/c/test
 node_modules/
 tape.klib
 .DS_Store
+*.klib
