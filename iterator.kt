@@ -22,8 +22,8 @@ class Iterator {
       this.offset = index / 2L
       this.factor = 2L
     } else {
-      this.offset = ftOffset(index, null)
-      this.factor = twoPow(ftDepth(index) + 1L)
+      this.offset = computeOffset(index, null)
+      this.factor = twoPow(computeDepth(index) + 1L)
     }
   }
 

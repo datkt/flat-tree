@@ -2,7 +2,7 @@ package datkt.flattree
 
 class Tree {
 
-  fun fullRoots(index: Long, result: Array<Long>?):  Array<Long> {
+  fun fullRoots(index: Long, result: Array<Long>? = null): Array<Long> {
     if (0L != index % 2L) {
       println("error")
       // TODO: throw error
@@ -31,13 +31,13 @@ class Tree {
     }
   }
 
-  fun count(index: Long, depth: Long?): Long {
+  fun count(index: Long, depth: Long? = null): Long {
     if (0L == index % 2L) {
       return 1L
     }
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
@@ -47,13 +47,13 @@ class Tree {
   fun parent(index: Long, depth: Long?): Long {
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
-    val offset = ftOffset(index, localDepth)
+    val offset = computeOffset(index, localDepth)
 
-    return ftIndex(localDepth + 1L, rightShift(offset))
+    return computeIndex(localDepth + 1L, rightShift(offset))
   }
 
   fun children(index: Long, depth: Long?): Array<Long> {
@@ -62,32 +62,32 @@ class Tree {
     }
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
-    val offset = ftOffset(index, localDepth) * 2L
+    val offset = computeOffset(index, localDepth) * 2L
     return arrayOf<Long>(
-      ftIndex(localDepth - 1L, offset),
-      ftIndex(localDepth - 1L, offset + 1L)
+      computeIndex(localDepth - 1L, offset),
+      computeIndex(localDepth - 1L, offset + 1L)
     )
   }
 
   fun sibling(index: Long, depth: Long?): Long {
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
-    var offset = ftOffset(index, localDepth)
+    var offset = computeOffset(index, localDepth)
     var localOffset: Long
     if (0L == offset) {
       localOffset = offset + 1
     } else {
       localOffset = offset - 1
     }
-    return ftIndex(localDepth, localOffset)
+    return computeIndex(localDepth, localOffset)
   }
 
   fun leftChild(index: Long, depth: Long?): Long {
@@ -96,12 +96,12 @@ class Tree {
     }
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
-    val offset =  ftOffset(index, localDepth) * 2L
-    return ftIndex(localDepth - 1L, offset)
+    val offset =  computeOffset(index, localDepth) * 2L
+    return computeIndex(localDepth - 1L, offset)
   }
 
   fun rightChild(index: Long, depth: Long?): Long {
@@ -110,12 +110,12 @@ class Tree {
     }
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
-    val offset =  ftOffset(index, localDepth) * 2L
-    return ftIndex(localDepth - 1L, offset + 1L)
+    val offset =  computeOffset(index, localDepth) * 2L
+    return computeIndex(localDepth - 1L, offset + 1L)
   }
 
   fun leftSpan(index: Long, depth: Long?): Long {
@@ -124,11 +124,11 @@ class Tree {
     }
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
-    val offset = ftOffset(index, localDepth)
+    val offset = computeOffset(index, localDepth)
     return offset * twoPow(localDepth + 1L)
   }
 
@@ -138,11 +138,11 @@ class Tree {
     }
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
-    val offset = ftOffset(index, localDepth) + 1L
+    val offset = computeOffset(index, localDepth) + 1L
     return offset * twoPow(localDepth + 1L) - 2L
   }
 
@@ -152,17 +152,16 @@ class Tree {
     }
     var localDepth: Long
     if (null == depth) {
-      localDepth = ftDepth(index)
+      localDepth = computeDepth(index)
     } else {
       localDepth = depth
     }
 
-    val offset = ftOffset(index, localDepth)
+    val offset = computeOffset(index, localDepth)
     val width = twoPow(localDepth + 1L)
     val left = offset * width
     val right = (offset + 1L) * width - 2L
 
     return arrayOf<Long>(left, right)
   }
-
 }
