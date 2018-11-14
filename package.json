@@ -1,10 +1,12 @@
 {
-  "name": "flattree",
+  "name": "@datkt/flattree",
   "version": "0.1.0",
   "description": "Kotlin port of @mafintosh's flat-tree functions to map a binary tree to a list.",
   "directories": {},
   "scripts": {
-    "test": "make test && ./test.kexe"
+    "build": "konanc *.kt $(konanc-config -clr lib.kc) -p library -o flattree",
+    "postinstall": "npm run build",
+    "test": "konanc test/ $(konanc-config -clr test.kc) -o test.kexe && ./test.kexe"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/datkt/flattree/issues"
   },
-  "homepage": "https://github.com/datkt/flattree#readme"
+  "homepage": "https://github.com/datkt/flattree#readme",
+  "dependencies": {
+    "@datkt/konanc-config": "^5.2.0"
+  },
+  "devDependencies": {
+    "@datkt/tape": "^0.6.1"
+  }
 }
