@@ -1,0 +1,3 @@
+repo = "@datkt/flattree"
+require = "./util"
+library = "tree"
