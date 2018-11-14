@@ -1,2 +1,2 @@
 require[] = "@datkt/tape"
-require[] = "./package"
+require[] = "."
