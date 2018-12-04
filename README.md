@@ -13,8 +13,9 @@ $ npm install @datkt/flattree
 
 ## Prerequisites
 
-* [Kotlin/Native](https://github.com/JetBrains/kotlin-native) and the
+- [Kotlin/Native](https://github.com/JetBrains/kotlin-native) and the
   `konanc` command line program.
+- `@datkt/konanc-config`
 
 ## Usage
 
