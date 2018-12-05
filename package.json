@@ -9,7 +9,9 @@
     "build-util": "konanc util.kt -p library -o util",
     "build-tree": "konanc tree.kt $(konanc-config -clr util.kc) -p library -o tree",
     "build-iterator": "konanc iterator.kt $(konanc-config -clr util.kc) -p library -o iterator",
-    "test": "konanc test/ $(konanc-config -clr test.kc) -o test.kexe && ./test.kexe"
+    "test": "konanc test/ $(konanc-config -clr test.kc) -o test.kexe && ./test.kexe",
+    "changelog": "conventional-changelog --same-file --preset angular --release-count 0 --infile CHANGELOG.md",
+    "version": "npm run changelog && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "@datkt/konanc-config": "^5.3.0"
   },
   "devDependencies": {
-    "@datkt/tape": "^0.6.1"
+    "@datkt/tape": "^0.6.1",
+    "conventional-changelog-cli": "^2.0.5"
   }
 }
