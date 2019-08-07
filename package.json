@@ -1,6 +1,6 @@
 {
   "name": "@datkt/flat-tree",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Kotlin port of @mafintosh's flat-tree functions to map a binary tree to a list.",
   "directories": {},
   "scripts": {
