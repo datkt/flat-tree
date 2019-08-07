@@ -1,5 +1,5 @@
 {
-  "name": "@datkt/flattree",
+  "name": "@datkt/flat-tree",
   "version": "0.2.1",
   "description": "Kotlin port of @mafintosh's flat-tree functions to map a binary tree to a list.",
   "directories": {},
@@ -15,18 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/datkt/flattree.git"
+    "url": "git+https://github.com/datkt/flat-tree.git"
   },
   "keywords": [
     "kotlin",
-    "flattree"
+    "flat-tree"
   ],
   "author": "Vanessa Pyne vip@littlstar.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/datkt/flattree/issues"
+    "url": "https://github.com/datkt/flat-tree/issues"
   },
-  "homepage": "https://github.com/datkt/flattree#readme",
+  "homepage": "https://github.com/datkt/flat-tree#readme",
   "dependencies": {
     "@datkt/konanc-config": "^5.3.0"
   },

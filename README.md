@@ -8,7 +8,7 @@ Port of @mafintosh's flat-tree functions to map a binary tree to a list.
 The `datkt.flattree` package an be installed with NPM.
 
 ```sh
-$ npm install @datkt/flattree
+$ npm install @datkt/flat-tree
 ```
 
 ## Prerequisites
@@ -20,8 +20,8 @@ $ npm install @datkt/flattree
 ## Usage
 
 ```sh
-## Compile a program in 'main.kt' and link flattree libraries found in `node_modules/`
-$ konanc main.kt $(konanc-config -clr @datkt/flattree) -o main.kexe
+## Compile a program in 'main.kt' and link flat-tree libraries found in `node_modules/`
+$ konanc main.kt $(konanc-config -clr @datkt/flat-tree) -o main.kexe
 $ ./main.kexe
 ```
 
